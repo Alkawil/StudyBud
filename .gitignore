@@ -1,0 +1,16 @@
+# Ignore the entire virtual environment directory
+/djangoenv/
+
+# Ignore Python bytecode
+__pycache__/
+*.py[cod]
+
+# Ignore environment variables and secrets
+.env
+
+# Ignore SQLite database files
+*.sqlite3
+
+# Ignore IDE specific files
+.idea/
+.vscode/
