@@ -2,7 +2,7 @@
 Study Buddy is a Django-based web application designed to help users manage their study sessions, track progress, and organize study materials. Inspired by a tutorial on building a Discord-like application with Django, this project aims to provide an engaging and user-friendly platform for students.
 
 
-# Features
+## Features
 User Authentication: Secure login and registration system for users.
 Study Session Management: Create, view, and manage study sessions.
 Resource Handling: Add and edit study materials.
