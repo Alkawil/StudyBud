@@ -1,8 +1,14 @@
-# Set line endings for all text files
+# Handle text files with automatic normalization
 * text=auto
 
-# Specific rules for certain file types
+# Specific line-ending rules for certain file types
 *.py text eol=lf
 *.html text eol=lf
 *.css text eol=lf
 *.js text eol=lf
+
+# Exclude binary files from normalization
+*.png binary
+*.jpg binary
+*.gif binary
+
