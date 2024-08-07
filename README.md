@@ -68,10 +68,3 @@ Explore the activity feed to track your progress.
 #####  Contributing
 Feel free to open issues or submit pull requests to contribute to the development of the project. Please make sure to follow the project's coding guidelines and style.
 
-
-#####  License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-
-#####  Acknowledgments
-This project is inspired by the tutorial provided by Dennis Ivy on building a Discord-like application with Django.
