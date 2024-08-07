@@ -1,14 +1,24 @@
 # StudyBud
-Study Buddy is a Django-based web application designed to help users manage their study sessions, track progress, and organize study materials. Drawing inspiration from a tutorial on building a Discord-like application with Django, this project offers an engaging and user-friendly platform tailored for students. <br>
+Study Bud is a website that mimics Discord and is intended to promote learning and information exchange in a group setting. Using our platform, you can set up virtual spaces where people with similar interests may congregate, have conversations, exchange insightful knowledge, and learn from one another. <br>
 
 # Features
-User Authentication: Secure login and registration system for users, ensuring that your data is protected. <br>
-Study Session Management: Create, view, and manage study sessions to help you stay organized and focused. <br>
-Resource Handling: Add and edit study materials, ensuring all the resources you need are at your fingertips. <br>
-Activity Feed: Track study progress and activities dynamically, keeping you informed and motivated. <br>
-User Profiles: View and update user profiles for a personalized experience. <br>
-Search Functionality: Easily find study materials and sessions with an intuitive search feature. <br>
-CRUD Operations: Full Create, Read, Update, Delete operations for study sessions and resources, providing complete control over content. <br>
+Account Creation and Registration: <br>
+Visitors can sign up and set up an account on the website. With their login information, they may log in and start participating. <br>
+
+Room Creation: <br>
+Users can construct rooms on various subjects to encourage conversation and study. These rooms serve as dedicated spaces for specific topics or interests. <br>
+
+Room Participation: <br>
+Individuals can enter already-existing rooms and take part in conversational exchanges. Engage with like-minded individuals and share your insights or questions. <br>
+
+Messaging: <br>
+Users can send messages within the rooms to interact with other participants. This feature facilitates seamless communication and fosters community building. <br>
+
+Recent Activities Log: <br>
+Stay informed about ongoing activities with our recent activities log. This serves as a communication tool, allowing members to stay up-to-date on discussions and events. <br>
+
+Searching: <br>
+Easily search topics or discussions of interest to participate in. This feature enables users to find relevant conversations and join in the learning experience. <br>
 Responsive Design: Mobile-friendly interface for on-the-go access. <br>
 ### Installation
 To run this project locally, follow these steps:
