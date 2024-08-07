@@ -1,16 +1,15 @@
 # StudyBud
-Study Buddy is a Django-based web application designed to help users manage their study sessions, track progress, and organize study materials. Inspired by a tutorial on building a Discord-like application with Django, this project aims to provide an engaging and user-friendly platform for students.
+Study Buddy is a Django-based web application designed to help users manage their study sessions, track progress, and organize study materials. Drawing inspiration from a tutorial on building a Discord-like application with Django, this project offers an engaging and user-friendly platform tailored for students. <br>
 
-
-### Features
-User Authentication: Secure login and registration system for users.
-</br> Study Session Management: Create, view, and manage study sessions.
-</br> Resource Handling: Add and edit study materials.
-</br> Activity Feed: Track your study progress and activities.
-</br> User Profiles: View and update user profiles.
-</br> Search Functionality: Easily find study materials and sessions.
-</br> CRUD Operations: Full Create, Read, Update, Delete operations for study sessions and resources.3# 
-</br> Responsive Design: Mobile-friendly interface for on-the-go access.
+# Features
+User Authentication: Secure login and registration system for users, ensuring that your data is protected. <br>
+Study Session Management: Create, view, and manage study sessions to help you stay organized and focused. <br>
+Resource Handling: Add and edit study materials, ensuring all the resources you need are at your fingertips. <br>
+Activity Feed: Track study progress and activities dynamically, keeping you informed and motivated. <br>
+User Profiles: View and update user profiles for a personalized experience. <br>
+Search Functionality: Easily find study materials and sessions with an intuitive search feature. <br>
+CRUD Operations: Full Create, Read, Update, Delete operations for study sessions and resources, providing complete control over content. <br>
+Responsive Design: Mobile-friendly interface for on-the-go access. <br>
 ### Installation
 To run this project locally, follow these steps:
 
