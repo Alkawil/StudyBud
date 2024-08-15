@@ -5,9 +5,8 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q #for searching purpose
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import Room,Topic
+from .models import Room,Topic,Message
 from .forms import RoomForm
-
 from django.contrib.auth import authenticate,login,logout
 # Create your views here.
 
@@ -19,7 +18,7 @@ from django.contrib.auth import authenticate,login,logout
 
 def loginPage(request):
     page = 'login'
-    if request.user.is_authenticated:# if the user tries to login using url while being logged in restrict them
+    if request.user.is_authenticated:# if the user tries to login using url while being logged in, restrict them
         return redirect('home')
     
     if request.method =="POST": # checking if user has entered the infos and logged in 
@@ -72,23 +71,50 @@ def home(request):
 
     topics = Topic.objects.all()
     room_count = rooms.count()
+    room_messages = Message.objects.all().filter(Q(room__topic__name__icontains=q)) # filter out messages based on browse topic on the left
+    context = {'rooms':rooms,'topics':topics,'room_count':room_count,'room_messages':room_messages}
 
-    return render(request,'base/home.html',{'rooms':rooms,'topics':topics,'room_count':room_count})
+
+    return render(request,'base/home.html',context)
 
 def room(request,pk):
     room = Room.objects.get(id=pk)
-    return render(request,'base/room.html',  {'room': room})
+    room_messages = room.message_set.all() # calling its children using the name of the class with set.all()/querying child objects
+    participants = room.participants.all() #many to many relationship .all()
+    if request.method == "POST":
+        messages = Message.objects.create(
+            user = request.user,
+            room = room,
+            body = request.POST.get('body')
+        )
+        room.participants.add(request.user)
+
+        return redirect('room',pk=room.id)
+
+    context =  {'room': room,'room_messages': room_messages,'participants':participants}
+    return render(request,'base/room.html', context)
+
+
+def user_profile(request,pk):
+    user = User.objects.get(id=pk)
+    rooms = user.room_set.all() # since we are using the same name rooms in feed_component.html
+    room_messages = user.message_set.all()
+    topics = Topic.objects.all()
+    context = {'user': user,'rooms':rooms,'room_messages':room_messages,'topics':topics}
+    return render(request,'base/profile.html',context)
 
 #create
 @login_required(login_url='login')
-
 def create_room(request):
     form = RoomForm()
     if request.method == "POST":
         #request.POST.get('name')
         form = RoomForm(request.POST)
         if form.is_valid():
-            form.save()
+
+            room = form.save(commit=False) # create an instance of the room
+            room.host = request.user
+            room.save()
             return redirect('home')
 
 
@@ -127,5 +153,20 @@ def delete_room(request,pk):
 
     
     return render(request,'base/delete.html',  {'obj': room})
+
+#delete
+@login_required(login_url='login')
+def delete_message(request,pk):
+    message = Message.objects.get(id=pk)
+
+    if message.user != request.user:
+        return HttpResponse("You are not allowed!!")
+    
+    if request.method =="POST":
+        message.delete()
+        return redirect('home')
+
+    
+    return render(request,'base/delete.html',  {'obj': message})
 
 
