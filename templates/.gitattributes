@@ -1,0 +1,34 @@
+# Handle text files with automatic normalization
+* text=auto
+
+# Specific line-ending rules for certain file types
+*.py text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+
+# Exclude binary files from normalization
+*.png binary
+*.jpg binary
+*.gif binary
+
+
+
+# Enforce LF line endings for specific file types
+*.html   text eol=lf
+*.css    text eol=lf
+*.svg    text eol=lf
+*.js     text eol=lf
+*.py     text eol=lf
+
+# Automatically handle text files with platform-native line endings
+* text=auto
+
+# Binary files should be left untouched
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+
